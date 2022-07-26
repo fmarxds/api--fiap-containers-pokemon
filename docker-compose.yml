@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+
+  api--pokemon:
+    container_name: api--pokemon
+    restart: always
+    depends_on:
+      - mongodb
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    environment:
+      SERVER_PORT: 5000
+      MONGODB_HOST: mongodb
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: admin
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - ./mongodb:/data/db
+
+  mongo-express:
+    image: mongo-express:0.54.0
+    container_name: mongo-express
+    restart: always
+    depends_on:
+      - mongodb
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
