@@ -6,21 +6,17 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Builder
-@Document("team")
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class PokemonTeamModel {
+public class PokemonModel {
 
-    @MongoId(FieldType.OBJECT_ID)
     @EqualsAndHashCode.Include
-    private String id;
-
-    @Field("pokemons")
-    private Set<PokemonModel> pokemons;
+    private String name;
+    private String image;
 
 }

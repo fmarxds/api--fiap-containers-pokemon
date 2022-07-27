@@ -58,7 +58,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"pokemons\": [\n        \"Pikachu\",\n        \"Charizard\"\n    ]\n}",
+					"raw": "{\n    \"pokemons\": [\n        {\n            \"name\": \"Pikachu\",\n            \"image\": \"xxx\"\n        },\n        {\n            \"name\": \"Charizard\",\n            \"image\": \"xxx\"\n        }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -86,7 +86,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"pokemons\": [\n        \"Pikachu\",\n        \"Charizard\",\n        \"Arcanine\"\n    ]\n}",
+					"raw": "{\n    \"pokemons\": [\n        {\n            \"name\": \"Pikachu\",\n            \"image\": \"xxx\"\n        },\n        {\n            \"name\": \"Charizard\",\n            \"image\": \"xxx\"\n        },\n        {\n            \"name\": \"Mew\",\n            \"image\": \"xxx\"\n        }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -107,7 +107,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "62df448dea148178f44052be"
+							"value": "62e09f4e6d729d602d3b400b"
 						}
 					]
 				}
