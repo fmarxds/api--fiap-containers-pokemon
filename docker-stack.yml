@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+
+  api--pokemon:
+    image: fmarxds/api-fiap-containers-pokemon
+    container_name: api--pokemon
+    restart: always
+    depends_on:
+      - mongodb
+    ports:
+      - "5000:5000"
+    environment:
+      SERVER_PORT: 5000
+      MONGODB_HOST: mongodb
+    networks:
+      - fiap
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: admin
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    networks:
+      - fiap
+    deploy:
+      placement:
+        constraints: [ node.role == manager ]
+
+networks:
+  fiap:
