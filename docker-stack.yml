@@ -5,7 +5,6 @@ services:
   api--pokemon:
     image: fmarxds/api-fiap-containers-pokemon
     container_name: api--pokemon
-    restart: always
     depends_on:
       - mongodb
     ports:
@@ -16,14 +15,29 @@ services:
     networks:
       - fiap
     deploy:
-      replicas: 2
+      replicas: 4
+      restart_policy:
+        condition: on-failure
+
+  web--pokemon:
+    image: runageinc/pokemon-frontend
+    container_name: web--pokemon
+    depends_on:
+      - api--pokemon
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_BACKEND_HOST: api--pokemon
+    networks:
+      - fiap
+    deploy:
+      replicas: 4
       restart_policy:
         condition: on-failure
 
   mongodb:
     image: mongo
     container_name: mongodb
-    restart: always
     ports:
       - "27017:27017"
     environment:
