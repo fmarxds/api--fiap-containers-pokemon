@@ -20,7 +20,7 @@ services:
         condition: on-failure
 
   web--pokemon:
-    image: runageinc/pokemon-frontend
+    image: runageinc/pokemon-frontend-test
     container_name: web--pokemon
     depends_on:
       - api--pokemon
