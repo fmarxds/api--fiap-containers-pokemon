@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
 
-  api-pokemon:
+  api--pokemon:
     image: fmarxds/api-fiap-containers-pokemon
     container_name: api--pokemon
     depends_on:
@@ -27,7 +27,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      REACT_APP_BACKEND_HOST: api-pokemon
+      REACT_APP_BACKEND_HOST: http://localhost:5000
     networks:
       - fiap
     deploy:
