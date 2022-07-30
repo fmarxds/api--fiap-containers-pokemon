@@ -4,6 +4,7 @@ services:
 
   api-pokemon:
     image: fmarxds/api-fiap-containers-pokemon
+    container_name: api--pokemon
     depends_on:
       - mongodb
     ports:
@@ -20,6 +21,7 @@ services:
 
   web--pokemon:
     image: runageinc/pokemon-frontend-test
+    container_name: web--pokemon
     depends_on:
       - api--pokemon
     ports:
@@ -35,6 +37,7 @@ services:
 
   mongodb:
     image: mongo
+    container_name: mongodb
     ports:
       - "27017:27017"
     environment:
