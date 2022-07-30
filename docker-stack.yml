@@ -27,7 +27,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      REACT_APP_BACKEND_HOST: api--pokemon-teste
+      REACT_APP_BACKEND_HOST: api--pokemon
     networks:
       - fiap
     deploy:
