@@ -27,7 +27,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      REACT_APP_BACKEND_HOST: http://192.168.0.27:5000
+      REACT_APP_BACKEND_HOST: http://ip172-18-0-50-cbibcpq44gtg008jn5eg-5000.direct.labs.play-with-docker.com
     networks:
       - fiap
     deploy:
