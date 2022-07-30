@@ -27,7 +27,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      REACT_APP_BACKEND_HOST: http://localhost:5000
+      REACT_APP_BACKEND_HOST: http://192.168.0.28:5000
     networks:
       - fiap
     deploy:
