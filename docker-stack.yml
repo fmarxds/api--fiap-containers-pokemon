@@ -4,7 +4,6 @@ services:
 
   api--pokemon:
     image: fmarxds/api-fiap-containers-pokemon
-    container_name: api--pokemon
     depends_on:
       - mongodb
     ports:
