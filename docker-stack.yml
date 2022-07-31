@@ -15,23 +15,7 @@ services:
     networks:
       - fiap
     deploy:
-      replicas: 2
-      restart_policy:
-        condition: on-failure
-
-  web--pokemon:
-    image: runageinc/pokemon-frontend-test
-    container_name: web--pokemon
-    depends_on:
-      - api--pokemon
-    ports:
-      - "3000:3000"
-    environment:
-      REACT_APP_BACKEND_HOST: api--pokemon-teste
-    networks:
-      - fiap
-    deploy:
-      replicas: 2
+      replicas: 4
       restart_policy:
         condition: on-failure
 
