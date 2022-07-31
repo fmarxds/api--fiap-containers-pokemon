@@ -20,14 +20,14 @@ services:
         condition: on-failure
 
   web--pokemon:
-    image: runageinc/pokemon-frontend-test
+    image: runageinc/pokemon-frontend
     container_name: web--pokemon
     depends_on:
       - api--pokemon
     ports:
       - "3000:3000"
     environment:
-      REACT_APP_BACKEND_HOST: http://ip172-18-0-50-cbibcpq44gtg008jn5eg-5000.direct.labs.play-with-docker.com
+      BACKEND_HOST: api--pokemon
     networks:
       - fiap
     deploy:
