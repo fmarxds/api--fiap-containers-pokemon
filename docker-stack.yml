@@ -27,7 +27,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      BACKEND_HOST: api--pokemon
+      BACKEND_URL: api--pokemon
     networks:
       - fiap
     deploy:
