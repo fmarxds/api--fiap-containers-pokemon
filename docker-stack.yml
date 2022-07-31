@@ -15,7 +15,7 @@ services:
     networks:
       - fiap
     deploy:
-      replicas: 4
+      replicas: 2
       restart_policy:
         condition: on-failure
 
