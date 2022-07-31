@@ -23,6 +23,10 @@ Abra um terminal na raiz do projeto e digite os comandos:
 
 Na pasta "postman" na raiz do projeto, estão as collections e o environment do Postman para importação
 
+# Demonstração
+
+https://www.loom.com/share/327c6f7b390f44ecb69089cbf34f9976
+
 # URL dos Serviços
 
 ### API e-commerce
